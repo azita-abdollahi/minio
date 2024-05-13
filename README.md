@@ -61,6 +61,9 @@ docker compose logs -f
 
 `Note`: By default backend service listens on TCP/3000 port
 
+`Note`: By default minio service listens on TCP/9000 port
+
+`Note`: for create minio access key and secret key first login into minio console and in left sidebar press Access Key option and create access key and put your acess key and secret key in [app_anv](https://github.com/azita-abdollahi/minio/blob/master/app_env).
 
 ## Installation
 
