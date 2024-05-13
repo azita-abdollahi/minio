@@ -1,9 +1,66 @@
-# Node.js Application with Minio with Docker
+**What is [Minio](https://min.io/docs/minio/container/index.html)?**
 
-This repository contains a Node.js application that allows users to upload and download images to Minio, a high-performance object storage service. 
-## Features
+	MinIO is a High Performance Object Storage released under GNU Affero  General Public License v3.0. It is API compatible with Amazon S3 cloud  storage 	service. Use MinIO to build high performance infrastructure for  machine learning, analytics and application data workloads.
 
-- Upload and download images to Minio using a Node.js application.
+**Project Setup**
+
+	Create a new project folder with the following command
+
+```shell
+mkdir minio 
+cd minio
+```
+
+​	Node.js – a JavaScript run-time scripting language
+
+​	Expressjs – serves as a Node.js framework
+
+​	minio – The [MinIO](https://www.npmjs.com/package/minio) JavaScript Client SDK provides high level APIs to access any Amazon S3 compatible object storage server.
+
+​	cors – To allow Cross-Origin Resource Sharing between the backend and frontend
+
+​	morgan – HTTP request logger middleware for node.js
+
+​	nodemon – is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are 			   detected.
+
+**Prerequisites**
+
+	Node.js
+
+	Docker
+
+	Docker-compose
+
+	minio
+
+These are the API endpoints we need for this Rest API
+
+| RESOURCE   | HTTP METHOD | ROUTE                   | DESCRIPTION               |
+| ---------- | ----------- | ----------------------- | ------------------------- |
+| fileserver | POST        | /api/file/upload/file   | upload image in minio     |
+| fileserver | POST        | /api/file/download/file | download image from minio |
+
+**docker-compose.yml**
+
+  to see docker-compose file click [here](https://github.com/azita-abdollahi/minio/blob/master/docker-compose.yml).
+
+Run the App
+
+ start the docker containers
+
+```shell
+#up docker containers and build
+docker compose up -d --build  
+#see the docker containers  
+docker compose ps  
+#stop the docker containers  
+docker compose down  
+#following logs of docker containers  
+docker compose logs -f
+```
+
+`Note`: By default backend service listens on TCP/3000 port
+
 
 ## Installation
 
