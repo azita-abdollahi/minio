@@ -1,12 +1,9 @@
-# Node.js Application with Minio, Grafana, Prometheus, Gotify, and Alertmanager with Docker
+# Node.js Application with Minio with Docker
 
-This repository contains a Node.js application that allows users to upload and download images to Minio, a high-performance object storage service. It also includes monitoring setup using Grafana and Prometheus, as well as alerting capabilities with Gotify and Alertmanager.
-
+This repository contains a Node.js application that allows users to upload and download images to Minio, a high-performance object storage service. 
 ## Features
 
 - Upload and download images to Minio using a Node.js application.
-- Monitor application performance and metrics with Grafana and Prometheus.
-- Receive alerts and notifications using Gotify and Alertmanager.
 
 ## Installation
 
