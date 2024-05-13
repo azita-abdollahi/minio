@@ -4,15 +4,15 @@ services:
     container_name: minio
     restart: unless-stopped
     ports:
-      - 9001:9000
-      - 9091:9090
+      - 9000:9000
+      - 9090:9090
     volumes:
       - ./data:/mnt/data
       - $PWD/config.env:/etc/config.env
     environment:
       - MINIO_CONFIG_ENV_FILE=/etc/config.env
       - MINIO_PROMETHEUS_AUTH_TYPE=public
-    command: minio server --console-address ":9091"
+    command: minio server --console-address ":9090"
     logging:
       driver: "json-file"
       options:
