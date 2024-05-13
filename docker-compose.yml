@@ -4,24 +4,56 @@ services:
     container_name: minio
     restart: unless-stopped
     ports:
-      - 9000:9000
-      - 9090:9090
+      - 9001:9000
+      - 9091:9090
     volumes:
       - ./data:/mnt/data
       - $PWD/config.env:/etc/config.env
     environment:
       - MINIO_CONFIG_ENV_FILE=/etc/config.env
       - MINIO_PROMETHEUS_AUTH_TYPE=public
-    command: minio server --console-address ":9090"
+    command: minio server --console-address ":9091"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 10m
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
       interval: 30s
       timeout: 20s
       retries: 3
     networks:
-      containers:
-        ipv4_address: 192.168.226.104
+      connet:
+        ipv4_address: 192.168.22.11
+  backend:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: backend:v1.0.0
+    container_name: backend
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    environment:
+      - origin=127.0.0.1
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 5
+        max-size: 10m
+    env_file:
+      - app_env
+      - credentials_env
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/healthChecker"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    networks:
+      connet:
+        ipv4_address: 192.168.22.12
 
 networks:
-  containers:
+  connet:
     external: true
