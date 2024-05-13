@@ -1,8 +1,9 @@
 **What is [Minio](https://min.io/docs/minio/container/index.html)?**
 
-	MinIO is a High Performance Object Storage released under GNU Affero General Public License v3.0. 
-	It is API compatible with Amazon S3 cloud storage service.
-	Use MinIO to build high performance infrastructure for machine learning, analytics and application data workloads.
+	MinIO is a High Performance Object Storage released under GNU Affero
+	General Public License v3.0. It is API compatible with Amazon S3 cloud
+	storage service. Use MinIO to build high performance infrastructure for 
+	machine learning, analytics and application data workloads.
 
 **Project Setup**
 
