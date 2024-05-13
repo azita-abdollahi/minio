@@ -1,0 +1,11 @@
+#minio
+MINIO_ENDPOINT=192.168.22.11
+MINIO_PORT="9000"
+MINIO_USE_SSL="false"
+MINIO_ACCESS_KEY="K34HgjeJ531biUWdDeUo"
+MINIO_SECRET_KEY="fFKofsfgDZDhBHg9ANs8O01j4OcQRlaftRms8RHu"
+
+#Backend
+PORT=3000
+NODE_ENV=development
+bucketName=images
